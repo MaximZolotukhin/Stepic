@@ -6,4 +6,3 @@ Sample Input:
 Sample Output: Hello Python!
 """
 print('Hello Python!') # функция print() отображает в консоли что переданную аргументом.
-
