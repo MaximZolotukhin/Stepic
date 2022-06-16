@@ -38,18 +38,22 @@ lst_in = list(map(str.strip, sys.stdin.readlines()))
 
 # считывание списка из входного потока (не меняйте переменную lst_in в программе)
 def sort_tup(list_twodimensionale_2):
-    list_template = ['Имя', 'Зачет', 'Оценка', 'Номер']
-    list_index = list()
-    for x in range(0,4):
+    """
+    Функция вычисляет позици по которым находятся шаблонные значения
+    :param list_twodimensionale_2:
+    :return: Возвращает список с шаблонными занчениями
+    """
+    list_template = ['Имя', 'Зачет', 'Оценка', 'Номер'] # Шаблонные знанчения
+    list_index = list() # Список в которы сохранятся индексы на которых находятся шаблонные значения
+    for x in range(0,4): # Перебираю знанчения и создаю список с индексами
         list_index.append(list_twodimensionale_2[0].index(list_template[x]))
 
     return list_index
-
 # здесь продолжайте программу (используйте список строк lst_in
-print(lst_in)
+
 list_twodimensionale_2 = tuple(tuple(int(z) if z.isdigit() else z for z in y.split(';')) for y in lst_in) # Создание двумерного кортежа
-
-list_template = ['Имя', 'Зачет', 'Оценка', 'Номер']
-t_sorted = sorted(list_twodimensionale_2, key=lambda x: x for x in sort_tup(list_twodimensionale_2))
-
+t_sorted = tuple(tuple(y[z] for z in sort_tup(list_twodimensionale_2)) for y in list_twodimensionale_2) # В эту переменную сохраняются
+# for y in list_twodimensionale_2 выбираю значения из общего кортежа
+# tuple(y[z] for z in sort_tup(list_twodimensionale_2)) - Каждый индекс полученный из функции я применю к каждому элементу полученному из предидущего for
+pprint(list_twodimensionale_2)
 pprint(t_sorted)
