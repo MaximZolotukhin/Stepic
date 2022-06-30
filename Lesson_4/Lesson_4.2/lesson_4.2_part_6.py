@@ -33,6 +33,7 @@ if number_mounth == 2:
         day_2 = day + 1
         print(f"{str(number_mounth).rjust(2, '0')}.{str(day - 1).rjust(2, '0')} {str(number_mounth).rjust(2, '0')}.{str(day_2).rjust(2, '0')}")
 
+
 # Апрель 4, Июнь 6, Сентябрь 9, Ноября 11 ---------------------------------------
 elif number_mounth in day_30:
     if day == 1:
@@ -48,6 +49,33 @@ elif number_mounth in day_30:
     else:
         day_2 = day + 1
         print(f"{str(number_mounth).rjust(2, '0')}.{str(day-1).rjust(2, '0')} {str(number_mounth).rjust(2, '0')}.{str(day_2).rjust(2, '0')}")
+
+#Август 8   -----------------------------------------------------------------------------------------------------------------
+elif number_mounth == 8:
+    if day == 1:
+        day_1, mounth_1 = 31, number_mounth - 1
+        day_2 = day + 1
+        print(
+            f"{str(mounth_1).rjust(2, '0')}.{str(day_1).rjust(2, '0')} {str(number_mounth).rjust(2, '0')}.{str(day_2).rjust(2, '0')}")
+    elif day == 30:
+        day_1, mounth_1 = 29, number_mounth
+        day_2 = 1
+        print(
+            f"{str(mounth_1).rjust(2, '0')}.{str(day_1).rjust(2, '0')} {str(number_mounth + 1).rjust(2, '0')}.{str(day_2).rjust(2, '0')}")
+    elif day == 31:
+        day_1, mounth_1 = 30, number_mounth
+        day_2 = 1
+        if number_mounth == 12:
+            print(f'{mounth_1}.{day_1} 01.0{day_2}')
+        else:
+            print(
+                f"{str(mounth_1).rjust(2, '0')}.{str(day_1).rjust(2, '0')} {str(number_mounth + 1).rjust(2, '0')}.{str(day_2).rjust(2, '0')}")
+    elif day > 31:
+        print(f'в месяце всего 31 день')
+    else:
+        day_2 = day + 1
+        print(
+            f"{str(number_mounth).rjust(2, '0')}.{str(day - 1).rjust(2, '0')} {str(number_mounth).rjust(2, '0')}.{str(day_2).rjust(2, '0')}")
 
 #Январь 1   Март 3   Май 5   Июль 7   Август 8   Октябрь 10   Декабрь 12 --------------------------------------------------------------
 elif number_mounth in day_31:
